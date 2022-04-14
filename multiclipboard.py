@@ -15,10 +15,15 @@ def load(path):
         return {}
 
 def delete(path, key):
-    with open(path, "r") as f:
+    with open(path) as f:
         data = json.load(f)
-    for element in data:
-        element.pop(key, None)
+    if key in data:
+        del(data[key])
+
+        with open(path, "w") as f:
+            json.dump(data, f)
+    else:
+        print("Key not found")
 
 if len(sys.argv) == 2:
     data = load(cPath)

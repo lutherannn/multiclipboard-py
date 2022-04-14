@@ -1,5 +1,7 @@
 #VSCode Workspace file
 *.code-workspace
+#cont.json
+./cont.json
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
